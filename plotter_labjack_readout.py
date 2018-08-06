@@ -17,7 +17,7 @@ with open(fileName,"r") as csvfile:
 
 print(result)
 
-plt.figure(figsize=(12,8))
+plt.figure(figsize=(15,8))
 plt.plot(list(j for j in range(0,len(result))),[float(i) for i in result])
 plt.gcf().autofmt_xdate()
 plt.gcf().subplots_adjust(bottom=0.25)
