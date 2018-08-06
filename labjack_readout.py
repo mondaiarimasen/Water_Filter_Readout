@@ -14,9 +14,11 @@ file = open(fileName, 'w')
 file.write("voltage,\n")
 
 while i<numsamples:
-    voltage = d.getAIN(0)
+    voltageBits, = d.getFeedback(u3.AIN(0)) 
+    print(voltageBits)
+    voltage = d.binaryToCalibratedAnalogVoltage(voltageBits, isLowVoltage = False, channelNumber = 0)
     print(voltage)
-    file.write("{:10.7},\n".format(voltage))
+    file.write("{:10.7f},\n".format(voltage))
     i+=1
 
 '''
