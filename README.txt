@@ -1,7 +1,9 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Data Acquisition from the Cooling Water Filter via the LabJack U3-LV (LJ) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 mondaiarimasen
 Created August 8, 2018
-
-Data Acquisition from the Cooling Water Filter via the LabJack U3-LV (LJ)
 
 *****************************************************************************
 I. Motivation
@@ -35,3 +37,5 @@ III. Comments
   - labjack_realtime_plotting.py will eventually write to
     testSignalGenData.dat
   - The LJ may be offsetting the signal by it's noise, so still investigating
+
+*****************************************************************************
