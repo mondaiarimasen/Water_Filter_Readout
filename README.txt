@@ -7,8 +7,10 @@ Created August 8, 2018
 
 *****************************************************************************
 I. Motivation
+
   - want to get the flow rate of the cooling water for the He compressor,
     which is located outside the building, without having to go outside
+    
   - send an alert (via email probably) if the flow rate is below the lower
     acceptable threshold value
 
