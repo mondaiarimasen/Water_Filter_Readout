@@ -9,7 +9,13 @@ from matplotlib import animation
 
 d = u3.U3() 
 d.debug = True
-d.getCalibrationData()
+print("getCalibrationData:")
+print(d.getCalibrationData(),"\n")
+print("configIO:")
+print(d.configIO(), "\n")
+d.configIO(FIOAnalog = 15)
+print("configIO:")
+print(d.configIO(), "\n")
 numsamples = 500
 i=0
 fileName = 'testSignalGenData.dat'
@@ -18,13 +24,14 @@ y = np.zeros(100000)
 x = np.arange(100000)
 
 def update(i):
+#getAIN seems to be better, since it automatically changes the bits to volt for you
 #    voltBits0, = d.getFeedback(u3.AIN(0))
-    voltBits1, = d.getFeedback(u3.AIN(1)) 
+    #voltBits1, = d.getFeedback(u3.AIN(1)) 
 
-    print("voltBits1 at %s: %s" % (i,voltBits1))
-    volt1 = d.binaryToCalibratedAnalogVoltage(voltBits1, isLowVoltage = False, channelNumber = 0)
-    print("voltage at %s: %s vs %s\n" % (i,volt1,d.getAIN(1)))
-    y[i]=d.getAIN(1)-volt1
+    #print("voltBits1 at %s: %s" % (i,voltBits1))
+    #volt1 = d.binaryToCalibratedAnalogVoltage(voltBits1, isLowVoltage = False, channelNumber = 0)
+    print("voltage at %s: %s vs %s\n" % (i,d.getAIN(1),d.getAIN(0)))
+    y[i]=d.getAIN(0)-d.getAIN(1)
 
     
 #file = open(fileName, 'w')
