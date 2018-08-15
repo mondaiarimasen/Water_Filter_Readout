@@ -38,6 +38,10 @@ III. Comments
 
   - labjack_realtime_plotting.py will eventually write to
     testSignalGenData.dat
+
   - The LJ may be offsetting the signal by it's noise, so still investigating
+
+  - on August 15, 2018, starting to work in directory Cryo-Data-Acquisition; 
+    beginning work with the cooling water monitor
 
 *****************************************************************************
