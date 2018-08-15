@@ -5,6 +5,7 @@
 import u3
 
 d = u3.U3() 
+d.debug = True
 d.getCalibrationData()
 numsamples = 500
 i=0
@@ -14,10 +15,11 @@ file = open(fileName, 'w')
 file.write("voltage,\n")
 
 while i<numsamples:
-    voltageBits, = d.getFeedback(u3.AIN(0)) 
+    voltageBits, = d.getFeedback(u3.AIN(1,0)) 
     print(voltageBits)
-    voltage = d.binaryToCalibratedAnalogVoltage(voltageBits, isLowVoltage = False, channelNumber = 0)
+    voltage = d.binaryToCalibratedAnalogVoltage(voltageBits, isLowVoltage = True, isSingleEnded = True, isSpecialSetting = False, channelNumber = 0)
     print(voltage)
+    #   print(d.getAIN(0))
     file.write("{:10.7f},\n".format(voltage))
     i+=1
 
